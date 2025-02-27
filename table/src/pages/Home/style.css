@@ -1,0 +1,154 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+}
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f0f0f0;
+}
+/* Estilos do input de pesquisa */
+.search-input {
+  width: 100%;
+  padding: 15px 40px 15px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  /* Garante que o cabeçalho fique sobre outros elementos */
+  background-color: white;
+  padding: 10px 0;
+}
+
+header .img {
+  width: 150px;
+}
+
+/* Container do título e barra de pesquisa */
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 54%;
+  width: 100%;
+  padding-top: 100px;
+  /* Para compensar o cabeçalho fixo */
+}
+
+/* Estilização do título */
+.title {
+  padding-left: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 1rem;
+  /* Equivalente ao text-2xl */
+  margin: 0;
+  /* Remove margens padrão */
+}
+
+/* Barra de pesquisa */
+.search-container {
+  position: relative;
+  width: 60%;
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 40px 15px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  font-size: 16px;
+  pointer-events: none;
+  /* Evita cliques no ícone */
+}
+
+/* Contêiner da tabela */
+.table-container {
+  overflow-x: auto;
+  padding: 10px;
+  margin-bottom: 50px; /* Aumente o valor conforme necessário */
+}
+
+/* Tabela */
+.custom-table {
+  width: 1360px;
+  margin-left: 20px;
+  background-color: white;
+  border-collapse: collapse;
+  border-left: 2px solid #f0f0f0;
+  /* Apenas bordas laterais */
+  border-right: 2px solid #f0f0f0;
+  border-bottom: 2px solid #dfdfdf;
+  border-radius: 12px 12px 0 0;
+  /* Apenas topo arredondado */
+  margin-bottom: 50px; /* Aumente o valor conforme necessário */
+
+}
+
+/* Cabeçalho */
+.custom-table thead {
+  background-color: #0500ff;
+  color: white;
+}
+
+/* Células do cabeçalho */
+.custom-table th {
+  padding: 10px;
+  text-align: center; /* ALINHADO NO CENTRO */
+  border: 1px solid #0500ff;
+  border-top: 0px solid #f0f0f0;
+}
+
+/* Bordas arredondadas apenas nos cantos superiores */
+.custom-table th.rounded-tl {
+  border-top-left-radius: 12px;
+}
+
+.custom-table th.rounded-tr {
+  border-top-right-radius: 12px;
+}
+
+/* Linhas e células */
+.custom-table td {
+  text-align: center;
+  padding: 10px;
+  border-top: 2px solid #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Imagem redonda */
+.custom-table img {
+  border-radius: 50%;
+  /* Faz a imagem ficar redonda */
+  width: 40px;
+  /* Largura da imagem */
+  height: 40px;
+  /* Altura da imagem (igual à largura para ser redonda) */
+  object-fit: cover;
+  /* Garante que a imagem cubra a área sem distorção */
+  text-align: center; /* ADICIONADO: Centraliza o texto nas células */
+  
+}
