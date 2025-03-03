@@ -3,13 +3,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", serif;
+  font-family: "Roboto", sans-serif;
 }
+
+/* Container principal */
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 body {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: #f0f0f0;
 }
+
 /* Estilos do input de pesquisa */
 .search-input {
   width: 100%;
@@ -27,40 +37,39 @@ header {
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 10;
-  /* Garante que o cabeçalho fique sobre outros elementos */
   background-color: white;
-  padding: 10px 0;
+  padding: 1px 0;
 }
 
 header .img {
   width: 150px;
+  padding-left: 30px;
 }
 
 /* Container do título e barra de pesquisa */
 .title-container {
   display: flex;
   align-items: center;
-  gap: 54%;
+  gap: 50%;
   width: 100%;
   padding-top: 100px;
-  /* Para compensar o cabeçalho fixo */
 }
 
 /* Estilização do título */
 .title {
-  padding-left: 30px;
+  padding-left: 52px;
   padding-top: 50px;
   padding-bottom: 50px;
   font-size: 1rem;
-  /* Equivalente ao text-2xl */
   margin: 0;
-  /* Remove margens padrão */
 }
 
 /* Barra de pesquisa */
 .search-container {
+  max-width: 1400px;
+  /* Mantém o mesmo tamanho da tabela */
   position: relative;
-  width: 60%;
+  width: 100%;
   max-width: 400px;
 }
 
@@ -70,6 +79,7 @@ header .img {
   border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
+  box-sizing: border-box;
 }
 
 .search-icon {
@@ -82,34 +92,45 @@ header .img {
   color: gray;
   font-size: 16px;
   pointer-events: none;
-  /* Evita cliques no ícone */
 }
 
 /* Contêiner da tabela */
 .table-container {
-  overflow-x: auto;
-  padding: 10px;
-  margin-bottom: 50px; /* Aumente o valor conforme necessário */
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 1400px;
+  margin: 20px auto 10px 10px;
+  /* Mantém espaço à esquerda e direita */
+  padding-right: 40px;
+
+  @media (max-width: 1336px) {
+    margin-right: 3px;
+  }
 }
 
 /* Tabela */
 .custom-table {
-  width: 1360px;
-  margin-left: 20px;
+  width: 100%;
+  max-width: 1300px;
+  table-layout: fixed;
+  margin-left: 40px;
   background-color: white;
   border-collapse: collapse;
   border-left: 2px solid #f0f0f0;
-  /* Apenas bordas laterais */
   border-right: 2px solid #f0f0f0;
   border-bottom: 2px solid #dfdfdf;
   border-radius: 12px 12px 0 0;
-  /* Apenas topo arredondado */
-  margin-bottom: 50px; /* Aumente o valor conforme necessário */
+  margin-bottom: 50px;
 
+  @media (max-width: 1336px) {
+    margin-right: 200px;
+    width: 1030px;
+  }
 }
 
 /* Cabeçalho */
 .custom-table thead {
+  width: 100%;
   background-color: #0500ff;
   color: white;
 }
@@ -117,7 +138,7 @@ header .img {
 /* Células do cabeçalho */
 .custom-table th {
   padding: 10px;
-  text-align: center; /* ALINHADO NO CENTRO */
+  text-align: center;
   border: 1px solid #0500ff;
   border-top: 0px solid #f0f0f0;
 }
@@ -142,13 +163,187 @@ header .img {
 /* Imagem redonda */
 .custom-table img {
   border-radius: 50%;
-  /* Faz a imagem ficar redonda */
   width: 40px;
-  /* Largura da imagem */
   height: 40px;
-  /* Altura da imagem (igual à largura para ser redonda) */
   object-fit: cover;
-  /* Garante que a imagem cubra a área sem distorção */
-  text-align: center; /* ADICIONADO: Centraliza o texto nas células */
-  
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+
+  .custom-table th:not(:first-child):not(:nth-child(2)),
+  .custom-table td:not(:first-child):not(:nth-child(2)) {
+    display: none;
+  }
+
+  header {
+    position: fixed;
+  }
+
+  header .img {
+    width: 150px;
+    padding-left: 20px;
+  }
+
+  .custom-table {
+    margin-left: 33px;
+    margin-right: 33px;
+    width: 85%;
+    border-radius: 12px;
+    /* Mantém bordas arredondadas */
+    overflow: hidden;
+  }
+
+  /* Garante que o cabeçalho tenha as bordas arredondadas */
+  .custom-table thead {
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    align-items: start;
+  }
+
+  .custom-table th:first-child {
+    border-top-left-radius: 10px;
+  }
+
+  .custom-table th:nth-child(2) {
+    border-top-right-radius: 10px;
+  }
+
+  .title-container {
+    gap: 0%;
+    flex-direction: column;
+    padding-left: 3px;
+    /* Menor espaço no lado esquerdo */
+    align-items: start;
+    /* Centraliza os itens */
+    width: 100%;
+  }
+
+  .title {
+    margin-left: -10px;
+    margin-top: -30px;
+    margin-bottom: 5px;
+    /* Espaço abaixo do título */
+    font-size: 1rem;
+    text-align: center;
+    /* Centraliza o título */
+  }
+
+  .search-container {
+    width: 100%;
+    max-width: 80%;
+    /* Ajuste do tamanho da barra de pesquisa */
+    margin-top: -30px;
+    margin-bottom: 5px;
+    /* Menor espaçamento entre o input e a tabela */
+  }
+
+  .search-input {
+    margin-left: 40px;
+    width: 95%;
+    padding: 10px 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+
+  .search-icon {
+    right: -6px;
+  }
+
+  /* Alinha o cabeçalho e as células à esquerda em telas de até 600px */
+  .custom-table thead,
+  .custom-table th,
+  .custom-table td {
+    text-align: left;
+    /* Alinha tudo à esquerda */
+  }
+
+  .custom-table th {
+    padding-left: 10px;
+    /* Adiciona espaço à esquerda no cabeçalho */
+  }
+
+  /* Ajusta o tamanho das células da foto e diminui o tamanho das células em telas de até 600px */
+  .custom-table th:nth-child(1),
+  /* Ajuste para a coluna de fotos */
+  .custom-table td:nth-child(1) {
+    /* Ajuste para a coluna de fotos */
+    width: 50px;
+    /* Diminui o tamanho da célula de foto */
+    padding: 5px;
+    /* Reduz o padding para diminuir o tamanho da célula */
+  }
+
+  .custom-table th img,
+  .custom-table td img {
+    width: 100%;
+    /* Mantém a imagem ocupando toda a célula, sem distorção */
+    height: auto;
+  }
+
+  /* Garante que o cabeçalho "NOME" use flexbox para alinhar o ponto */
+  .custom-table th:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    /* Mantém o texto à esquerda e o ponto à direita */
+    align-items: center;
+    position: relative;
+    padding-right: 15px;
+    /* Garante espaço para o ponto */
+  }
+
+  /* Adiciona o ponto ao final do cabeçalho "NOME" */
+  .custom-table th:nth-child(2)::after {
+    content: "•";
+    /* O ponto */
+    font-size: 20px;
+    /* Tamanho do ponto */
+    color: white;
+    /* Cor do ponto */
+    margin-left: auto;
+    /* Empurra o ponto para o final */
+
+  }
+
+  /* Adiciona a setinha apenas nas células visíveis */
+  .custom-table td.visivel {
+    position: relative;
+    padding-right: 20px;
+    /* Dá um espaço para a seta no final */
+  }
+
+  /* Linha inclinada esquerda */
+  .custom-table td.visivel::before {
+    content: "";
+    position: absolute;
+    margin-right: 8px;
+    right: 8px;
+    /* Move para o final da célula */
+    top: 20px;
+    width: 12px;
+    height: 2px;
+    background-color: blue;
+    transform: rotate(45deg);
+  }
+
+  /* Linha inclinada direita */
+  .custom-table td.visivel::after {
+    content: "";
+    position: absolute;
+    margin-right: 8px;
+    right: 0px;
+    /* Alinha com a outra perna da seta */
+    top: 20px;
+    width: 12px;
+    height: 2px;
+    background-color: blue;
+    transform: rotate(-45deg);
+  }
+
+  /* Esconde as setinhas das células que não estão visíveis */
+  .custom-table td:not(.visivel)::before,
+  .custom-table td:not(.visivel)::after {
+    display: none;
+  }
+
 }

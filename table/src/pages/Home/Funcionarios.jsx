@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 // Função para remover os acentos
 const removerAcentos = (texto) => {
     return texto
-        .normalize("NFD") // Normaliza para decompor os caracteres acentuados
-        .replace(/[\u0300-\u036f]/g, ""); // Remove os acentos
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 };
 
 function Funcionarios({ search }) {
@@ -17,13 +17,13 @@ function Funcionarios({ search }) {
             .catch((err) => console.log("Erro ao buscar funcionários:", err));
     }, []);
 
-    // Função para filtrar os dados com base no texto de pesquisa
+    // Filtra os funcionários com base na pesquisa
     const filteredFuncionarios = funcionarios.filter((funcionario) => {
-        const searchLower = removerAcentos(search.toLowerCase()); // Remove acentos da pesquisa
+        const searchLower = removerAcentos(search.toLowerCase());
         return (
-            removerAcentos(funcionario.name.toLowerCase()).includes(searchLower) || // Remove acentos do nome
-            removerAcentos(funcionario.job.toLowerCase()).includes(searchLower) || // Remove acentos do cargo
-            funcionario.phone.includes(searchLower) // Não precisa remover acentos do telefone
+            removerAcentos(funcionario.name.toLowerCase()).includes(searchLower) ||
+            removerAcentos(funcionario.job.toLowerCase()).includes(searchLower) ||
+            funcionario.phone.includes(searchLower)
         );
     });
 
@@ -52,7 +52,7 @@ function Funcionarios({ search }) {
                                         height="40"
                                     />
                                 </td>
-                                <td>{funcionario.name}</td>
+                                <td className="visivel">{funcionario.name}</td>
                                 <td>{funcionario.job}</td>
                                 <td>{new Date(funcionario.admission_date).toLocaleDateString()}</td>
                                 <td>{funcionario.phone}</td>
@@ -68,5 +68,15 @@ function Funcionarios({ search }) {
         </div>
     );
 }
+
+// Altera o conteúdo da caixa de pesquisa de acordo com o tamanho da tela
+window.addEventListener("resize", function () {
+    const searchInput = document.querySelector(".search-input");
+    if (window.innerWidth <= 400) {
+        searchInput.placeholder = "Pesquisar";
+    } else {
+        searchInput.placeholder = "Pesquisar por nome, cargo ou telefone";
+    }
+});
 
 export default Funcionarios;
