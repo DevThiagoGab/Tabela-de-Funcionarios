@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset geral */
 * {
   margin: 0;
   padding: 0;
@@ -14,13 +14,14 @@
   padding: 0 20px;
 }
 
+/* Estilização do body */
 body {
   min-height: 100vh;
   width: 100%;
   background-color: #f0f0f0;
 }
 
-/* Estilos do input de pesquisa */
+/* Estilos para o input de pesquisa */
 .search-input {
   width: 100%;
   padding: 15px 40px 15px 15px;
@@ -29,7 +30,7 @@ body {
   outline: none;
 }
 
-/* Header */
+/* Estilização do header fixo */
 header {
   position: fixed;
   top: 0;
@@ -41,12 +42,13 @@ header {
   padding: 1px 0;
 }
 
+/* Imagem do header */
 header .img {
   width: 150px;
   padding-left: 30px;
 }
 
-/* Container do título e barra de pesquisa */
+/* Container para título e barra de pesquisa */
 .title-container {
   display: flex;
   align-items: center;
@@ -55,7 +57,7 @@ header .img {
   padding-top: 100px;
 }
 
-/* Estilização do título */
+/* Estilo do título */
 .title {
   padding-left: 52px;
   padding-top: 50px;
@@ -64,15 +66,15 @@ header .img {
   margin: 0;
 }
 
-/* Barra de pesquisa */
+/* Estilização da barra de pesquisa */
 .search-container {
   max-width: 1400px;
-  /* Mantém o mesmo tamanho da tabela */
-  position: relative;
   width: 100%;
   max-width: 400px;
+  position: relative;
 }
 
+/* Estilo do input da pesquisa */
 .search-input {
   width: 100%;
   padding: 15px 40px 15px 15px;
@@ -82,6 +84,7 @@ header .img {
   box-sizing: border-box;
 }
 
+/* Ícone de pesquisa */
 .search-icon {
   width: 20px;
   height: 20px;
@@ -94,21 +97,16 @@ header .img {
   pointer-events: none;
 }
 
-/* Contêiner da tabela */
+/* Container da tabela */
 .table-container {
   overflow-x: hidden;
   width: 100%;
   max-width: 1400px;
   margin: 20px auto 10px 10px;
-  /* Mantém espaço à esquerda e direita */
   padding-right: 40px;
-
-  @media (max-width: 1336px) {
-    margin-right: 3px;
-  }
 }
 
-/* Tabela */
+/* Estilização da tabela */
 .custom-table {
   width: 100%;
   max-width: 1300px;
@@ -121,29 +119,24 @@ header .img {
   border-bottom: 2px solid #dfdfdf;
   border-radius: 12px 12px 0 0;
   margin-bottom: 50px;
-
-  @media (max-width: 1336px) {
-    margin-right: 200px;
-    width: 1030px;
-  }
 }
 
-/* Cabeçalho */
+/* Estilização do cabeçalho da tabela */
 .custom-table thead {
   width: 100%;
   background-color: #0500ff;
   color: white;
 }
 
-/* Células do cabeçalho */
+/* Estilo das células do cabeçalho */
 .custom-table th {
   padding: 10px;
   text-align: center;
   border: 1px solid #0500ff;
-  border-top: 0px solid #f0f0f0;
+  border-top: none;
 }
 
-/* Bordas arredondadas apenas nos cantos superiores */
+/* Bordas arredondadas no cabeçalho */
 .custom-table th.rounded-tl {
   border-top-left-radius: 12px;
 }
@@ -152,7 +145,7 @@ header .img {
   border-top-right-radius: 12px;
 }
 
-/* Linhas e células */
+/* Estilo das células da tabela */
 .custom-table td {
   text-align: center;
   padding: 10px;
@@ -160,22 +153,24 @@ header .img {
   border-bottom: 2px solid #f0f0f0;
 }
 
-/* Imagem redonda */
+/* Estilo das imagens nas células */
 .custom-table img {
   border-radius: 50%;
   width: 40px;
   height: 40px;
   object-fit: cover;
-  text-align: center;
 }
 
+/* Estilos para dispositivos móveis (telas pequenas) */
 @media (max-width: 600px) {
 
+  /* Oculta colunas desnecessárias em telas pequenas */
   .custom-table th:not(:first-child):not(:nth-child(2)),
   .custom-table td:not(:first-child):not(:nth-child(2)) {
     display: none;
   }
 
+  /* Ajustes para o header em dispositivos móveis */
   header {
     position: fixed;
   }
@@ -185,57 +180,45 @@ header .img {
     padding-left: 20px;
   }
 
+  /* Ajusta a tabela para caber melhor em telas pequenas */
   .custom-table {
     margin-left: 33px;
     margin-right: 33px;
     width: 85%;
     border-radius: 12px;
-    /* Mantém bordas arredondadas */
     overflow: hidden;
   }
 
-  /* Garante que o cabeçalho tenha as bordas arredondadas */
   .custom-table thead {
     border-radius: 12px 12px 0 0;
     overflow: hidden;
     align-items: start;
   }
 
-  .custom-table th:first-child {
-    border-top-left-radius: 10px;
-  }
-
-  .custom-table th:nth-child(2) {
-    border-top-right-radius: 10px;
-  }
-
+  /* Ajuste no layout da title-container */
   .title-container {
     gap: 0%;
     flex-direction: column;
     padding-left: 3px;
-    /* Menor espaço no lado esquerdo */
     align-items: start;
-    /* Centraliza os itens */
     width: 100%;
   }
 
+  /* Ajustes no estilo do título */
   .title {
     margin-left: -10px;
     margin-top: -30px;
     margin-bottom: 5px;
-    /* Espaço abaixo do título */
     font-size: 1rem;
     text-align: center;
-    /* Centraliza o título */
   }
 
+  /* Estilos para a barra de pesquisa em dispositivos móveis */
   .search-container {
     width: 100%;
     max-width: 80%;
-    /* Ajuste do tamanho da barra de pesquisa */
     margin-top: -30px;
     margin-bottom: 5px;
-    /* Menor espaçamento entre o input e a tabela */
   }
 
   .search-input {
@@ -250,100 +233,87 @@ header .img {
     right: -6px;
   }
 
-  /* Alinha o cabeçalho e as células à esquerda em telas de até 600px */
+  /* Ajuste de alinhamento e espaçamento das células da tabela */
   .custom-table thead,
   .custom-table th,
   .custom-table td {
     text-align: left;
-    /* Alinha tudo à esquerda */
   }
 
   .custom-table th {
     padding-left: 10px;
-    /* Adiciona espaço à esquerda no cabeçalho */
   }
 
-  /* Ajusta o tamanho das células da foto e diminui o tamanho das células em telas de até 600px */
+  /* Ajuste para a coluna de imagens */
   .custom-table th:nth-child(1),
-  /* Ajuste para a coluna de fotos */
   .custom-table td:nth-child(1) {
-    /* Ajuste para a coluna de fotos */
     width: 50px;
-    /* Diminui o tamanho da célula de foto */
     padding: 5px;
-    /* Reduz o padding para diminuir o tamanho da célula */
   }
 
   .custom-table th img,
   .custom-table td img {
     width: 100%;
-    /* Mantém a imagem ocupando toda a célula, sem distorção */
     height: auto;
   }
 
-  /* Garante que o cabeçalho "NOME" use flexbox para alinhar o ponto */
+  /* Alinhamento do cabeçalho "NOME" */
   .custom-table th:nth-child(2) {
     display: flex;
     justify-content: space-between;
-    /* Mantém o texto à esquerda e o ponto à direita */
     align-items: center;
     position: relative;
     padding-right: 15px;
-    /* Garante espaço para o ponto */
   }
 
-  /* Adiciona o ponto ao final do cabeçalho "NOME" */
+  /* Adiciona um ponto ao final do cabeçalho "NOME" */
   .custom-table th:nth-child(2)::after {
     content: "•";
-    /* O ponto */
     font-size: 20px;
-    /* Tamanho do ponto */
     color: white;
-    /* Cor do ponto */
     margin-left: auto;
-    /* Empurra o ponto para o final */
-
   }
 
-  /* Adiciona a setinha apenas nas células visíveis */
+  /* Estilo de células visíveis com setas */
   .custom-table td.visivel {
     position: relative;
     padding-right: 20px;
-    /* Dá um espaço para a seta no final */
   }
 
-  /* Linha inclinada esquerda */
+  /* Linha inclinada esquerda para células visíveis */
   .custom-table td.visivel::before {
     content: "";
     position: absolute;
     margin-right: 8px;
     right: 8px;
-    /* Move para o final da célula */
     top: 20px;
     width: 12px;
     height: 2px;
     background-color: blue;
     transform: rotate(45deg);
+    transition: transform 0.3s ease;
   }
 
-  /* Linha inclinada direita */
+  /* Linha inclinada direita para células visíveis */
   .custom-table td.visivel::after {
     content: "";
     position: absolute;
     margin-right: 8px;
     right: 0px;
-    /* Alinha com a outra perna da seta */
     top: 20px;
     width: 12px;
     height: 2px;
     background-color: blue;
     transform: rotate(-45deg);
+    transition: transform 0.3s ease;
   }
 
-  /* Esconde as setinhas das células que não estão visíveis */
-  .custom-table td:not(.visivel)::before,
-  .custom-table td:not(.visivel)::after {
-    display: none;
+  /* Modificação das setas quando a célula está expandida */
+  .custom-table td.expanded::before {
+    transform: rotate(-45deg);
   }
 
+  .custom-table td.expanded::after {
+    transform: rotate(45deg);
+  }
 }

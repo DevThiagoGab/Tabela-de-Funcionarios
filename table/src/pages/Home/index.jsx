@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./style.css";
 import Logo from "./imgs/LogoBeTalent.png";
 import Funcionarios from "./Funcionarios";
@@ -8,24 +8,26 @@ function Home() {
 
   return (
     <div>
-      {/* Cabeçalho */}
+      {/* Cabeçalho com o logo */}
       <header>
         <img src={Logo} className="img" alt="Logo BeTalent" />
       </header>
 
-      {/* Título e Barra de Pesquisa */}
+      {/* Título da página e barra de pesquisa */}
       <div className="title-container">
         <div className="title">
           <h1>Funcionários</h1>
         </div>
         <div className="search-container">
+          {/* Campo de pesquisa */}
           <input
             className="search-input"
             placeholder="Pesquisar por nome, cargo ou telefone"
             type="text"
-            value={search} // Controla o estado do input
-            onChange={(e) => setSearch(e.target.value)} // Atualiza o estado de pesquisa
+            value={search} // Controla o valor do input com o estado 'search'
+            onChange={(e) => setSearch(e.target.value)} // Atualiza o estado 'search' conforme o usuário digita
           />
+          {/* Ícone de busca */}
           <svg
             className="search-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +45,8 @@ function Home() {
         </div>
       </div>
 
-      {/* Componente de Funcionários */}
-      <Funcionarios search={search} /> {/* Passa o estado de pesquisa como prop */}
+      {/* Componente que exibe a lista de funcionários */}
+      <Funcionarios search={search} /> {/* Passa o estado de pesquisa para o componente Funcionarios */}
     </div>
   );
 }
