@@ -54,29 +54,26 @@ Entre na pasta da tabela, table, em sua máquina, e execute o comando npm run de
 
 A estrutura do projeto está organizada da seguinte maneira:
 
-bash
-Copiar
-Editar
 /API-BeTalent                    # Pasta para a API simulada
-  - db                           # Dados simulados para a API
-  - package
-  - package-lock
+  ├── db/                        # Dados simulados para a API
+  ├── package.json               # Arquivo de configuração da API (com dependências)
+  ├── package-lock.json          # Lock file das dependências da API
 
 /table
-  /node_modules         # Dependências do projeto
-  /public               # Arquivos públicos (HTML, imagens, etc)
-  /src
-    /pages
-      /home
-        - imgs/            # Imagens usadas no projeto
-        - Funcionarios.js  # Arquivo que busca e filtra os dados da API
-        - index.jsx        # Componente principal da página home
-        - style.css        # Estilos específicos para a página home
-    - index.css          # Estilos globais do projeto
-    - main.jsx           # Arquivo principal de inicialização do React
-    - .gitignore         # Arquivo de configuração do Git
-    - (outros arquivos criados ao criar um projeto React)
-README.md               # Este arquivo
+  ├── /node_modules              # Dependências do projeto React
+  ├── /public                    # Arquivos públicos (HTML, imagens, etc)
+  ├── /src
+  │   ├── /pages
+  │   │   └── /home              # Página principal do projeto
+  │   │       ├── imgs/         # Imagens usadas no projeto
+  │   │       ├── Funcionarios.js # Arquivo que busca e filtra os dados da API
+  │   │       ├── index.jsx     # Componente principal da página home
+  │   │       └── style.css     # Estilos específicos para a página home
+  │   ├── index.css              # Estilos globais do projeto
+  │   ├── main.jsx               # Arquivo principal de inicialização do React
+  │   ├── .gitignore             # Arquivo de configuração do Git
+  │   └── (outros arquivos criados ao criar um projeto React)
+  ├── README.md                  # Este arquivo
 
 
 Se precisar de mais informações ou quiser discutir sobre o código, fique à vontade para entrar em contato.
