@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-// Função para remover os acentos
+// Função para remover os acentos de um texto
 const removerAcentos = (texto) => {
     return texto
         .normalize("NFD")
@@ -32,7 +32,7 @@ function Funcionarios({ search }) {
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
+    }, []); // Executa uma vez quando o componente é montado
 
     // Filtra os funcionários com base na pesquisa
     const filteredFuncionarios = funcionarios.filter((funcionario) => {
@@ -105,7 +105,7 @@ function Funcionarios({ search }) {
                         ))
                     ) : (
                         <tr className="empty">
-                            <td colSpan="5">Nenhum funcionário encontrado.</td>
+                            <td colSpan="2">Nenhum funcionário encontrado.</td>
                         </tr>
                     )}
                 </tbody>

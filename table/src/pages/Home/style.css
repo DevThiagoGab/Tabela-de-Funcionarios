@@ -6,7 +6,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-/* Container principal */
+/* Container principal: centraliza o conteúdo e define largura máxima */
 .container {
   max-width: 1600px;
   width: 100%;
@@ -14,14 +14,14 @@
   padding: 0 20px;
 }
 
-/* Estilização do body */
+/* Estilização do body: define o fundo e altura mínima */
 body {
   min-height: 100vh;
   width: 100%;
   background-color: #f0f0f0;
 }
 
-/* Estilos para o input de pesquisa */
+/* Estilo para o input de pesquisa */
 .search-input {
   width: 100%;
   padding: 15px 40px 15px 15px;
@@ -30,7 +30,7 @@ body {
   outline: none;
 }
 
-/* Estilização do header fixo */
+/* Estilização do header fixo: mantém o cabeçalho fixo no topo */
 header {
   position: fixed;
   top: 0;
@@ -42,13 +42,13 @@ header {
   padding: 1px 0;
 }
 
-/* Imagem do header */
+/* Imagem do header: ajusta o tamanho e padding da imagem no cabeçalho */
 header .img {
   width: 150px;
   padding-left: 30px;
 }
 
-/* Container para título e barra de pesquisa */
+/* Container para título e barra de pesquisa: usa flexbox para alinhar itens */
 .title-container {
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@ header .img {
   padding-top: 100px;
 }
 
-/* Estilo do título */
+/* Estilo do título: define o tamanho e espaçamento do título */
 .title {
   padding-left: 52px;
   padding-top: 50px;
@@ -66,7 +66,7 @@ header .img {
   margin: 0;
 }
 
-/* Estilização da barra de pesquisa */
+/* Estilização da barra de pesquisa: ajusta o tamanho e layout */
 .search-container {
   max-width: 1400px;
   width: 100%;
@@ -84,7 +84,7 @@ header .img {
   box-sizing: border-box;
 }
 
-/* Ícone de pesquisa */
+/* Ícone de pesquisa: posiciona o ícone dentro do input */
 .search-icon {
   width: 20px;
   height: 20px;
@@ -97,7 +97,7 @@ header .img {
   pointer-events: none;
 }
 
-/* Container da tabela */
+/* Container da tabela: ajusta a largura e adiciona espaçamento */
 .table-container {
   overflow-x: hidden;
   width: 100%;
@@ -106,7 +106,7 @@ header .img {
   padding-right: 40px;
 }
 
-/* Estilização da tabela */
+/* Estilização da tabela: define a largura, bordas e aparência geral */
 .custom-table {
   width: 100%;
   max-width: 1300px;
@@ -121,7 +121,7 @@ header .img {
   margin-bottom: 50px;
 }
 
-/* Estilização do cabeçalho da tabela */
+/* Estilização do cabeçalho da tabela: define a cor de fundo e o texto */
 .custom-table thead {
   width: 100%;
   background-color: #0500ff;
@@ -149,11 +149,11 @@ header .img {
 .custom-table td {
   text-align: center;
   padding: 10px;
-  border-top: 2px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
   border-bottom: 2px solid #f0f0f0;
 }
 
-/* Estilo das imagens nas células */
+/* Estilo das imagens nas células da tabela */
 .custom-table img {
   border-radius: 50%;
   width: 40px;
@@ -316,4 +316,5 @@ header .img {
   .custom-table td.expanded::after {
     transform: rotate(45deg);
   }
+
 }
