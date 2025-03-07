@@ -54,26 +54,24 @@ Entre na pasta da tabela, table, em sua máquina, e execute o comando npm run de
 
 A estrutura do projeto está organizada da seguinte maneira:
 
-/API-BeTalent                    # Pasta para a API simulada
-  ├── db/                        # Dados simulados para a API
-  ├── package.json               # Arquivo de configuração da API (com dependências)
-  ├── package-lock.json          # Lock file das dependências da API
+1. **`/API-BeTalent`**:
+   - **`db/`**: Contém os dados simulados para a API (arquivo JSON).
+   - **`package.json`** e **`package-lock.json`**: Arquivos de configuração do **json-server**, para gerenciar as dependências da API.
 
-/table
-  ├── /node_modules              # Dependências do projeto React
-  ├── /public                    # Arquivos públicos (HTML, imagens, etc)
-  ├── /src
-  │   ├── /pages
-  │   │   └── /home              # Página principal do projeto
-  │   │       ├── imgs/         # Imagens usadas no projeto
-  │   │       ├── Funcionarios.js # Arquivo que busca e filtra os dados da API
-  │   │       ├── index.jsx     # Componente principal da página home
-  │   │       └── style.css     # Estilos específicos para a página home
-  │   ├── index.css              # Estilos globais do projeto
-  │   ├── main.jsx               # Arquivo principal de inicialização do React
-  │   ├── .gitignore             # Arquivo de configuração do Git
-  │   └── (outros arquivos criados ao criar um projeto React)
-  ├── README.md                  # Este arquivo
+2. **`/table`**:
+   - **`/node_modules`**: Contém as dependências do projeto React.
+   - **`/public`**: Contém os arquivos públicos, como o `index.html` e imagens gerais do projeto.
+   - **`/src`**:
+     - **`/pages/home`**: Contém os arquivos da página principal do projeto.
+       - **`imgs/`**: Imagens utilizadas na página.
+       - **`Funcionarios.js`**: Script responsável por buscar e filtrar os dados da API.
+       - **`index.jsx`**: Componente principal da página `home`.
+       - **`style.css`**: Arquivo CSS com os estilos específicos para a página.
+     - **`index.css`**: Arquivo CSS global com estilos para todo o projeto.
+     - **`main.jsx`**: Arquivo de inicialização do React, onde o aplicativo começa.
+     - **`.gitignore`**: Arquivo que define quais arquivos/pastas devem ser ignorados pelo Git.
+
+3. **`README.md`**: Este arquivo, contendo informações gerais sobre o projeto e instruções de uso.
 
 
 Se precisar de mais informações ou quiser discutir sobre o código, fique à vontade para entrar em contato.
